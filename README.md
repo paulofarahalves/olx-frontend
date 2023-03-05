@@ -1,3 +1,5 @@
+Selling website using React and API
+
 Installation
 
 ### `npm install`
