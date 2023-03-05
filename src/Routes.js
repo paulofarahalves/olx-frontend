@@ -7,6 +7,9 @@ import About from './pages/About';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import AdPage from './pages/AdPage';
+import AddAd from './pages/AddAd';
+import Ads from './pages/Ads';
+import MyAccount from './pages/MyAccount';
 
 export const Routes = () => {
 	return useRoutes([
@@ -54,7 +57,23 @@ export const Routes = () => {
 			path: '/post-an-ad',
 			element: (
 				<RouteHandler private>
-					<About />
+					<AddAd />
+				</RouteHandler>
+			),
+		},
+		{
+			path: '/ads',
+			element: (
+				<RouteHandler>
+					<Ads />
+				</RouteHandler>
+			),
+		},
+		{
+			path: '/my-account',
+			element: (
+				<RouteHandler>
+					<MyAccount />
 				</RouteHandler>
 			),
 		},

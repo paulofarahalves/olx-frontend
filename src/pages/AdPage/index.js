@@ -132,7 +132,7 @@ const Page = () => {
 							<div className="createdBy box box--padding">
 								<strong>{adInfo.userInfo.name}</strong>
 								<small>Email: {adInfo.userInfo.email}</small>
-								<small>State: {adInfo.state}</small>
+								<small>State: {adInfo.stateName}</small>
 							</div>
 						</>
 					)}
