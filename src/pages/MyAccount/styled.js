@@ -84,4 +84,32 @@ export const PageArea = styled.div`
 			width: 25%;
 		}
 	}
+
+	@media (max-width: 600px) {
+		padding: 0 20px;
+		form {
+			.area {
+				flex-direction: column;
+
+				.area--title {
+					width: 100%;
+					text-align: left;
+					margin-bottom: 10px;
+				}
+
+				.area--input {
+					width: 100%;
+
+					button {
+						width: 100%;
+						padding: 10px;
+					}
+				}
+			}
+
+			.list .aditem {
+				width: 50%;
+			}
+		}
+	}
 `;

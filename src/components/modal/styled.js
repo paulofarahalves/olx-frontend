@@ -40,4 +40,9 @@ export const ModalArea = styled.div`
 		border-radius: 10px;
 		color: black;
 	}
+	@media (max-width: 600px) {
+		.modal {
+			padding: 0;
+		}
+	}
 `;

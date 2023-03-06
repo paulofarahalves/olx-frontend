@@ -22,6 +22,14 @@ export const Routes = () => {
 			),
 		},
 		{
+			path: '/olx-frontend',
+			element: (
+				<RouteHandler>
+					<Home />
+				</RouteHandler>
+			),
+		},
+		{
 			path: '/about',
 			element: (
 				<RouteHandler>

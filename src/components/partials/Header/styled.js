@@ -29,13 +29,13 @@ export const HeaderArea = styled.div`
 		}
 
 		.logo-1 {
-			color: #f00;
+			color: #6709cb;
 		}
 		.logo-2 {
-			color: #0f0;
+			color: #85d95e;
 		}
 		.logo-3 {
-			color: #00f;
+			color: #e57900;
 		}
 	}
 
@@ -86,6 +86,15 @@ export const HeaderArea = styled.div`
 					}
 				}
 			}
+		}
+	}
+	@media (max-width: 600px) {
+		/*height: auto;
+		.container {
+			flex-direction: column;
+		}*/
+		.logo {
+			margin-left: 10px;
 		}
 	}
 `;
