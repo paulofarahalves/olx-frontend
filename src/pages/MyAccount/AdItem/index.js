@@ -46,11 +46,11 @@ export default (props) => {
 		getUserInfo();
 	}, []);
 
-	let categoryId = '';
+	let categoryName = '';
 	if (categories) {
 		categories.map((i) => {
-			if (props.data.category === i.slug) {
-				categoryId = i._id;
+			if (props.data.category === i._id) {
+				categoryName = i.slug.toString();
 			}
 		});
 	}
@@ -88,8 +88,8 @@ export default (props) => {
 					fData.append('img', fileField.current.files[i]);
 				}
 			}
-
-			const json = await api.updatePost(props.data.id, fData);
+			console.log(props.data._id);
+			const json = await api.updatePost(props.data._id, fData);
 
 			if (!json.error) {
 				window.location.href = '/my-account';
@@ -125,10 +125,12 @@ export default (props) => {
 				}}
 			>
 				<div className="itemImage">
-					<img
-						src={`http://alunos.b7web.com.br:501/media/${props.data.images[0].url}`}
-						alt=""
-					/>
+					{
+						<img
+							src={`http://localhost:5000/media/${props.data.images[0].url}`}
+							alt=""
+						/>
+					}
 				</div>
 				<div className="itemName">{props.data.title}</div>
 				<div className="itemPrice">{`$ ${props.data.price}`}</div>
@@ -167,13 +169,13 @@ export default (props) => {
 								required
 							>
 								<option key={0} value={props.data.category}>
-									{props.data.category[0].toUpperCase() +
-										props.data.category.substring(1)}
+									{categoryName[0]?.toUpperCase() +
+										categoryName?.substring(1)}
 								</option>
 
 								{categories &&
 									categories.map((i) => {
-										if (i._id !== categoryId) {
+										if (i._id !== props.data.category) {
 											return (
 												<option
 													key={i._id}

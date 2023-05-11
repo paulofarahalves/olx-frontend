@@ -14,6 +14,7 @@ const Page = () => {
 	const [name, setName] = useState('');
 	const [stateLoc, setStateLoc] = useState('');
 	const [userLoc, setUserLoc] = useState('');
+	const [userLocId, setUserLocId] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
@@ -22,15 +23,6 @@ const Page = () => {
 	const [disabled, setDisabled] = useState(false);
 	const [error, setError] = useState('');
 	const [done, setDone] = useState('none');
-
-	let stateId = '';
-	if (stateList) {
-		stateList.map((i) => {
-			if (userLoc === i.name) {
-				stateId = i._id;
-			}
-		});
-	}
 
 	useEffect(() => {
 		const getStates = async () => {
@@ -43,14 +35,26 @@ const Page = () => {
 	useEffect(() => {
 		const getUserInfo = async () => {
 			const uInfo = await api.getUserInfo();
+
 			setName(uInfo.name);
-			setStateLoc(uInfo.state);
+			setStateLoc(uInfo.stateId);
 			setEmail(uInfo.email);
 			setAdList(uInfo.ads);
 			setUserLoc(uInfo.state);
+			setUserLocId(uInfo.stateId);
 		};
 		getUserInfo();
 	}, []);
+
+	let stateId = '';
+
+	if (stateList) {
+		stateList.map((i) => {
+			if (userLoc === i.name) {
+				stateId = i._id;
+			}
+		});
+	}
 
 	const doneDivStyle = {
 		display: done,
@@ -72,11 +76,11 @@ const Page = () => {
 		if (json.error) {
 			setError(json.error);
 		} else {
+			setDone('block');
 			window.location.href = '/my-account';
 		}
 
 		setDisabled(false);
-		setDone('block');
 	};
 
 	return (
@@ -107,13 +111,13 @@ const Page = () => {
 										setStateLoc(e.target.value)
 									}
 								>
-									<option key={0} value={userLoc}>
+									<option key={0} value={userLocId}>
 										{userLoc}
 									</option>
 									{stateList.map((i, k) => {
 										if (i._id !== stateId) {
 											return (
-												<option key={k} value={i.name}>
+												<option key={k} value={i._id}>
 													{i.name}
 												</option>
 											);
@@ -176,7 +180,7 @@ const Page = () => {
 					<h2>My Ads</h2>
 					<div className="list">
 						{adList.map((i, k) => (
-							<AdItem key={k} data={i} />
+							<AdItem key={k} data={i._doc} />
 						))}
 					</div>
 				</PageArea>

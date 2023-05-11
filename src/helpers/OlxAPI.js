@@ -1,7 +1,8 @@
 import Cookies from 'js-cookie';
 import qs from 'qs';
 
-const BASEAPI = 'http://alunos.b7web.com.br:501';
+//const BASEAPI = 'http://alunos.b7web.com.br:501';
+const BASEAPI = 'http://localhost:5000';
 
 const apiFetchPost = async (endpoint, body) => {
 	if (!body.token) {
@@ -153,7 +154,6 @@ const OlxAPI = {
 
 	updatePost: async (id, fData) => {
 		const json = await apiFetchFile(`/ad/${id}`, fData);
-		console.log(json);
 		return json;
 	},
 };
