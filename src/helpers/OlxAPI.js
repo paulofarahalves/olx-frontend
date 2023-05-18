@@ -1,8 +1,7 @@
 import Cookies from 'js-cookie';
 import qs from 'qs';
 
-//const BASEAPI = 'http://alunos.b7web.com.br:501';
-const BASEAPI = 'http://localhost:5000';
+const BASEAPI = 'http://54.94.190.6:5000';
 
 const apiFetchPost = async (endpoint, body) => {
 	if (!body.token) {

@@ -127,7 +127,7 @@ export default (props) => {
 				<div className="itemImage">
 					{
 						<img
-							src={`http://localhost:5000/media/${props.data.images[0].url}`}
+							src={`http://54.94.190.6:5000/media/${props.data.images[0].url}`}
 							alt=""
 						/>
 					}
