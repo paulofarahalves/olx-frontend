@@ -8,8 +8,12 @@
 
 `npm start`
 
+### Backend
+
+https://github.com/paulofarahalves/olx-backend
+
 ### Usage
 
-https://paulofarahalves.github.io/olx-frontend/
+http://paulofarahalves-olx.infinityfreeapp.com/
 
-This application uses an API from B7Web course, which may not be running all the time
+![olx](https://github.com/paulofarahalves/olx-frontend/assets/60483392/9a59a04c-af0b-4ff2-b8f1-1e0d9e8a228b)
