@@ -10,6 +10,8 @@
 
 ### Usage
 
-https://paulofarahalves.github.io/olx-frontend/
+http://paulofarahalves-olx.infinityfreeapp.com/
 
-This application uses an API from B7Web course, which may not be running all the time
+### Backend
+
+https://github.com/paulofarahalves/olx-backend
