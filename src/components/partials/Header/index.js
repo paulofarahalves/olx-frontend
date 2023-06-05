@@ -36,7 +36,7 @@ const Header = () => {
 								</li>
 								<li>
 									<Link to="/post-an-ad" className="button">
-										Post an ad
+										Post ad
 									</Link>
 								</li>
 							</>
